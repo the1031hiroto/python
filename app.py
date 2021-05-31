@@ -2,7 +2,10 @@ from flask import Flask
 import os
 
 PORT = 8080
-MESSAGE = "Hello World!!!"
+name = os.environ['SITE_NAME']
+if name == None or len(name) == 0:
+    name = "world"
+MESSAGE = "Hello, " + name + "!"
 print("Message: '" + MESSAGE + "'")
 
 app = Flask(__name__)

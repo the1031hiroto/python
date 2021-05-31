@@ -5,4 +5,7 @@ build:
     build:
       - pip install -r requirements.txt
 run:
-  command: python server.py
+  command: python app.py
+  env:
+    - name: SITE_NAME
+      value: "Sample name"
